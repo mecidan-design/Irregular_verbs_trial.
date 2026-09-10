@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Irregular Past Simple &middot; Chapter IV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   ESTETICA: fantasy heroica (Excalibur 1981 / The NeverEnding
+   Story 1984) para la unidad de superheroes de 5to grado.
+   Se conserva la ARQUITECTURA del SPECS (borde grueso + sombra
+   solida sin blur + tarjetas rotadas); cambia el tono visual:
+   cielo nocturno estrellado, pergamino, oro, carmesi y esmeralda.
+   ========================================================= */
+:root{
+  --gold:#f2b632; --gold-lt:#ffd873; --gold-dk:#9d6d15;
+  --night:#120b30; --royal:#5b2ea8; --teal:#0f7a86;
+  --crimson:#b1263c; --emerald:#1c7f45;
+  --parch:#fdf6e3; --ink:#241605;
+  --head:"Cinzel",Georgia,"Times New Roman",serif;
+  --body:"Poppins","Segoe UI",Arial,Helvetica,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--body); color:var(--ink); min-height:100vh; padding:24px 14px 70px;
+  background:
+    radial-gradient(rgba(255,255,255,.55) 1px, transparent 1.5px) 0 0/37px 37px,
+    radial-gradient(rgba(255,216,115,.45) 1px, transparent 1.4px) 19px 23px/59px 59px,
+    radial-gradient(130% 85% at 50% 0%, rgba(255,216,115,.15), transparent 62%),
+    linear-gradient(165deg,#0d0827 0%,#221046 26%,#4a1d6e 52%,#123f52 79%,#0a2736 100%);
+  background-attachment:fixed;
+}
+.wrap{max-width:900px;margin:0 auto}
+svg.ic{width:1em;height:1em;vertical-align:-.13em;fill:currentColor}
+
+/* ---------- header ---------- */
+.hero{
+  background:linear-gradient(158deg,#1a0f3d 0%,#3b1a5e 58%,#0f3a4a 100%);
+  border:5px solid var(--gold); border-radius:22px;
+  box-shadow:0 0 0 4px #150c2f, 13px 13px 0 rgba(0,0,0,.45);
+  padding:22px 26px; margin-bottom:26px; position:relative; overflow:hidden;
+}
+.hero:before{
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(60% 90% at 82% 15%, rgba(255,216,115,.22), transparent 62%);
+  pointer-events:none;
+}
+.chapter{
+  font-family:var(--head); font-weight:700; font-size:.78rem; letter-spacing:3.4px;
+  color:var(--gold); text-transform:uppercase; display:block; margin-bottom:5px;
+}
+.hero h1{
+  font-family:var(--head); font-weight:900; color:#fff9e8; margin:0;
+  font-size:clamp(1.55rem,5vw,2.6rem); line-height:1.08; letter-spacing:1.4px;
+  text-shadow:0 3px 0 #6a3a00, 0 5px 14px rgba(0,0,0,.6);
+}
+.hero p{font-family:var(--body);color:#d8c7f5;margin:.6rem 0 0;font-size:.97rem;font-weight:500}
+.hero .verbline{
+  font-family:var(--head); font-weight:700; color:var(--gold-lt); font-size:.84rem;
+  letter-spacing:1.5px; margin-top:10px; text-transform:uppercase; line-height:1.6;
+}
+
+/* ---------- quest bar (3 medals) ---------- */
+.quest{
+  display:flex; gap:10px; flex-wrap:wrap; margin-bottom:30px;
+}
+.medal{
+  flex:1 1 190px; display:flex; align-items:center; gap:10px;
+  background:rgba(10,6,28,.72); border:3px solid #4a3a7a; border-radius:16px; padding:9px 13px;
+  transition:border-color .2s, background .2s;
+}
+.medal .mi{
+  width:34px;height:34px;flex:0 0 auto;border-radius:50%;border:3px solid #4a3a7a;
+  display:flex;align-items:center;justify-content:center;color:#7a6aa8;font-size:1rem;
+}
+.medal .mt{font-family:var(--head);font-weight:700;font-size:.8rem;letter-spacing:1px;color:#9c8ac8;line-height:1.2}
+.medal .ms{font-family:var(--head);font-weight:900;font-size:.95rem;color:#7a6aa8}
+.medal.won{border-color:var(--gold);background:rgba(60,36,6,.75)}
+.medal.won .mi{border-color:var(--gold);color:var(--gold);background:rgba(242,182,50,.16)}
+.medal.won .mt{color:var(--gold-lt)}
+.medal.won .ms{color:#fff9e8}
+
+/* ---------- cards ---------- */
+.card{
+  background:
+    radial-gradient(rgba(150,110,40,.075) 1px, transparent 1.6px) 0 0/13px 13px,
+    linear-gradient(180deg,#fdf6e3 0%,#f6e9cd 100%);
+  border:4px solid #2b1c07; border-radius:18px; padding:22px 22px 24px;
+  margin-bottom:34px; position:relative;
+}
+.card:nth-of-type(3n+1){box-shadow:10px 10px 0 var(--gold-dk); transform:rotate(-.4deg)}
+.card:nth-of-type(3n+2){box-shadow:10px 10px 0 var(--crimson); transform:rotate(.35deg)}
+.card:nth-of-type(3n+3){box-shadow:10px 10px 0 var(--teal);    transform:rotate(-.25deg)}
+/* OJO (trampa del SPECS): cualquier variante necesita DOS clases,
+   porque :nth-of-type le gana por especificidad a una clase sola. */
+.card.arena{
+  background:
+    radial-gradient(rgba(255,255,255,.2) 1px, transparent 1.4px) 0 0/28px 28px,
+    linear-gradient(165deg,#180d38 0%,#2c1352 55%,#0e3446 100%);
+  border-color:var(--gold); box-shadow:0 0 0 4px #140b2e, 11px 11px 0 rgba(0,0,0,.45);
+  transform:rotate(-.35deg);
+}
+.card.codex{
+  background:linear-gradient(180deg,#1a0f3d,#12283a);
+  border-color:var(--gold); box-shadow:10px 10px 0 rgba(0,0,0,.42); transform:rotate(.3deg);
+}
+
+.tag{
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:var(--head); font-weight:700; font-size:.75rem; letter-spacing:2px;
+  background:linear-gradient(180deg,var(--gold-lt),var(--gold)); color:#2b1c07;
+  border:3px solid #2b1c07; border-radius:999px;
+  padding:3px 14px; margin-bottom:11px; text-transform:uppercase;
+}
+.card h2{font-family:var(--head);font-weight:900;font-size:1.5rem;margin:.1rem 0 .3rem;line-height:1.15;letter-spacing:.6px}
+.sub{font-size:.92rem;color:#5c4a2c;margin:0 0 18px;line-height:1.5}
+.arena h2{color:#fff9e8}
+.arena .sub{color:#c9bbe8}
+.codex h2{color:#fff9e8}
+.codex .sub{color:#c9bbe8}
+
+/* ---------- buttons ---------- */
+.btn{
+  font-family:var(--head); font-weight:700; font-size:.97rem; letter-spacing:.7px;
+  color:#2b1c07; cursor:pointer;
+  background:linear-gradient(180deg,var(--gold-lt),var(--gold));
+  border:3px solid #2b1c07; border-radius:999px; padding:10px 24px;
+  box-shadow:5px 5px 0 #2b1c07; transition:transform .07s, box-shadow .07s;
+}
+.btn:hover{filter:brightness(1.07)}
+.btn:active{transform:translate(5px,5px);box-shadow:0 0 0 #2b1c07}
+.btn.ghost{background:var(--parch);color:#2b1c07}
+.btn.dark{background:linear-gradient(180deg,#3b1a5e,#1a0f3d);color:#ffe9b0;border-color:var(--gold);box-shadow:5px 5px 0 #0a0620}
+.btn[disabled]{opacity:.45;cursor:default;transform:none;box-shadow:5px 5px 0 #2b1c07}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px}
+.scoreline{font-family:var(--head);font-weight:700;font-size:1rem;letter-spacing:.5px}
+.arena .scoreline{color:#ffe9b0}
+
+/* ---------- inputs ---------- */
+input[type=text]{
+  font-family:var(--body); font-size:1rem; font-weight:500; padding:7px 11px;
+  border:3px solid #2b1c07; border-radius:10px; background:#fffdf4; outline:none; color:var(--ink);
+}
+input[type=text]:focus{background:#fff;box-shadow:0 0 0 4px var(--gold)}
+input.ok{background:#e3f7e0;border-color:var(--emerald)}
+input.no{background:#fde5e9;border-color:var(--crimson)}
+
+/* ---------- explanation blocks ---------- */
+.exp{
+  border:3px solid #2b1c07;border-radius:13px;padding:11px 13px;margin-top:11px;
+  background:#f3ecfb;font-size:.92rem;line-height:1.5;
+}
+.exp.right{background:#eaf8e5}
+.exp.wrong{background:#fdeef1}
+.exp b.lab{
+  font-family:var(--head);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;
+  display:inline-block;border:2px solid #2b1c07;border-radius:999px;padding:1px 10px;margin-right:7px;
+}
+.lab.why{background:#a8e4ec}
+.lab.tip{background:var(--gold-lt)}
+.exp p{margin:0 0 7px}
+.exp p:last-child{margin-bottom:0}
+/* OJO: Cinzel dibuja las minusculas como VERSALITAS. Sirve para titulos y
+   etiquetas, pero destruye la lectura de una oracion completa. Todo lo que el
+   alumno tenga que LEER como ingles corriente va con la tipografia de cuerpo. */
+.sol{font-family:var(--body);font-weight:700;color:#3d1470}
+
+/* ---------- grammar scroll ---------- */
+.gnote{
+  border:4px solid #2b1c07;border-radius:15px;padding:13px 16px;margin:0 0 18px;
+  background:linear-gradient(180deg,#fffaea,#fbf0d2);box-shadow:5px 5px 0 var(--gold);
+  font-size:.95rem;line-height:1.6;
+}
+.gnotetitle{font-family:var(--head);font-weight:900;font-size:1.02rem;display:flex;align-items:center;gap:8px;margin-bottom:8px;letter-spacing:.5px}
+.gnote ul{margin:0;padding-left:20px}
+.gnote li{margin-bottom:6px}
+.gform{
+  font-family:var(--body);font-weight:600;background:#a8e4ec;
+  border:2px solid #2b1c07;border-radius:6px;padding:1px 7px;display:inline-block;
+}
+.gwarn{margin:10px 0 0;background:#fde5e9;border:2px solid #2b1c07;border-radius:10px;padding:8px 11px;font-weight:500}
+
+/* ---------- SPEED RUN ---------- */
+.hud{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:9px}
+.chip{
+  font-family:var(--head);font-weight:700;font-size:.82rem;letter-spacing:.8px;
+  border:3px solid #2b1c07;border-radius:999px;padding:3px 14px;
+  background:linear-gradient(180deg,var(--gold-lt),var(--gold));color:#2b1c07;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.chip.streak{background:linear-gradient(180deg,#ff9db0,var(--crimson));color:#fff;border-color:#2b1c07}
+.chip.clock{background:linear-gradient(180deg,#9fe6ef,var(--teal));color:#04262b}
+.chip.combo{background:linear-gradient(180deg,#d7b6ff,var(--royal));color:#fff}
+.dots{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 14px}
+.dot{width:14px;height:14px;border-radius:50%;border:3px solid #7a6aa8;background:transparent}
+.dot.y{background:var(--gold);border-color:var(--gold)}
+.dot.n{background:var(--crimson);border-color:var(--crimson)}
+.dot.now{box-shadow:0 0 0 3px #a8e4ec}
+.timer{height:13px;border:3px solid var(--gold);border-radius:999px;overflow:hidden;background:rgba(0,0,0,.35);margin-bottom:14px}
+.timer span{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--gold-lt),var(--gold));transition:width .08s linear}
+.timer.low span{background:linear-gradient(90deg,#ff9db0,var(--crimson))}
+.qbox{background:var(--parch);border:4px solid var(--gold);border-radius:16px;padding:16px}
+.vword{
+  font-family:var(--head);font-weight:900;font-size:clamp(2rem,9vw,3.1rem);letter-spacing:3px;
+  text-align:center;margin:4px 0 4px;color:#3d1470;line-height:1.1;
+}
+.vhint{font-family:var(--head);font-weight:700;font-size:.75rem;letter-spacing:2px;text-align:center;color:#8a6a2a;text-transform:uppercase;margin-bottom:12px}
+.qsent{font-size:1.08rem;font-weight:500;line-height:1.6;margin:2px 0 14px}
+.opts{display:flex;flex-wrap:wrap;gap:9px;justify-content:center}
+.opt{
+  font-family:var(--body);font-size:1rem;font-weight:600;cursor:pointer;background:#fff;
+  border:3px solid #2b1c07;border-radius:999px;padding:8px 20px;box-shadow:3px 3px 0 #2b1c07;
+  transition:transform .07s,box-shadow .07s;color:var(--ink);
+}
+.opt:hover{background:#fff3d0}
+.opt.good{background:#bdf0b0;border-color:var(--emerald)}
+.opt.bad{background:#ffc7d1;text-decoration:line-through;border-color:var(--crimson)}
+.opt[disabled]{cursor:default}
+.flash{font-family:var(--head);font-weight:900;font-size:1.15rem;letter-spacing:1px;text-align:center;margin:14px 0 2px}
+.flash.y{color:var(--emerald)}
+.flash.n{color:var(--crimson)}
+.pair{font-family:var(--head);font-weight:900;font-size:1.5rem;letter-spacing:2px;text-align:center;color:#3d1470;margin:2px 0 8px}
+.final{text-align:center;padding:12px 6px}
+.final .big{font-family:var(--head);font-weight:900;font-size:3.2rem;color:var(--gold);line-height:1;margin:6px 0;text-shadow:0 3px 0 #6a3a00}
+.final .msg{font-family:var(--head);font-weight:700;color:#fff9e8;font-size:1.15rem;margin-bottom:8px;letter-spacing:.6px}
+.final .stats{color:#c9bbe8;font-size:.95rem;margin-bottom:14px;line-height:1.7}
+.review{margin-top:22px;text-align:left}
+.review h3{font-family:var(--head);font-weight:900;color:var(--gold-lt);font-size:1.05rem;letter-spacing:1px;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+.ritem{background:var(--parch);border:3px solid #2b1c07;border-radius:13px;padding:11px 13px;margin-bottom:11px}
+.rtop{font-family:var(--head);font-weight:900;font-size:1rem;letter-spacing:.8px;margin-bottom:5px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.mark{font-family:var(--head);font-weight:700;font-size:.72rem;letter-spacing:1px;border:2px solid #2b1c07;border-radius:999px;padding:1px 10px}
+.mark.y{background:#bdf0b0}
+.mark.n{background:#ffc7d1}
+
+/* ---------- VERB VAULT ---------- */
+.vaultbox{
+  border:4px dashed #2b1c07;border-radius:16px;padding:13px 15px;margin-bottom:20px;
+  background:linear-gradient(180deg,#fffaea,#f7ecd2);
+}
+.vaultbox .vt{font-family:var(--head);font-weight:900;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:#8a6a2a;display:flex;align-items:center;gap:7px;margin-bottom:9px}
+.vchips{display:flex;flex-wrap:wrap;gap:8px}
+.vchip{
+  font-family:var(--head);font-weight:700;font-size:.88rem;letter-spacing:1.5px;
+  background:#fff;border:3px solid #2b1c07;border-radius:9px;padding:4px 12px;box-shadow:3px 3px 0 var(--gold);
+}
+.vchip.used{background:#e3f7e0;box-shadow:3px 3px 0 var(--emerald);opacity:.62;text-decoration:line-through}
+.vchip.extra{background:#ffe9b0;box-shadow:3px 3px 0 var(--crimson)}
+.item{border:3px solid #2b1c07;border-radius:15px;padding:14px 15px;margin-bottom:16px;background:#fffdf4}
+.sline{display:flex;align-items:flex-start;gap:9px;font-size:1.04rem;font-weight:500;line-height:2.1}
+.rn{
+  font-family:var(--head);font-size:.74rem;font-weight:700;color:#fff9e8;background:var(--royal);
+  border:2px solid #2b1c07;border-radius:50%;width:22px;height:22px;flex:0 0 auto;
+  display:inline-flex;align-items:center;justify-content:center;margin-top:8px;
+}
+.sline input{width:132px;text-align:center}
+.extraline{
+  border:4px solid #2b1c07;border-radius:16px;padding:14px 15px;margin-top:6px;
+  background:linear-gradient(180deg,#fff3d0,#ffe9b0);box-shadow:5px 5px 0 var(--crimson);
+}
+.extraline .et{font-family:var(--head);font-weight:900;font-size:.98rem;letter-spacing:.6px;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.extraline .eh{font-size:.89rem;color:#5c4a2c;margin:0 0 10px;line-height:1.5}
+.extraline input{width:100%;text-align:left}
+.checklist{margin-top:12px;border:3px solid #2b1c07;border-radius:13px;padding:11px 13px;background:#fffdf4;font-size:.92rem;line-height:1.55}
+.checklist ul{margin:6px 0 0;padding-left:20px}
+.checklist li{margin-bottom:4px}
+.needtitle{font-family:var(--head);font-weight:900;font-size:.88rem;letter-spacing:.6px;display:block;margin-bottom:2px}
+.modelbox{border:3px solid #2b1c07;border-radius:13px;padding:11px 13px;background:#eaf8e5;font-size:.92rem;line-height:1.55;margin-top:9px}
+.selfnote{font-style:italic;color:#5c4a2c;font-size:.85rem;margin-top:8px;display:block}
+
+/* ---------- FORMS (negative / question) ---------- */
+.aff{font-size:1.06rem;font-weight:600;line-height:1.5;margin:0 0 11px;display:flex;align-items:flex-start;gap:9px}
+.fline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:9px}
+.flab{
+  font-family:var(--head);font-weight:700;font-size:.74rem;letter-spacing:1.4px;text-transform:uppercase;
+  border:2px solid #2b1c07;border-radius:999px;padding:2px 12px;white-space:nowrap;flex:0 0 auto;
+}
+.flab.neg{background:#ffc7d1}
+.flab.que{background:#a8e4ec}
+.fline input{flex:1 1 320px;min-width:230px;text-align:left}
+
+/* ---------- CODEX ---------- */
+.gbox{border:3px solid var(--gold);border-radius:14px;padding:12px 14px;margin-bottom:12px;background:rgba(255,255,255,.05)}
+.gbox h4{font-family:var(--head);font-weight:900;font-size:.92rem;letter-spacing:1.6px;color:var(--gold-lt);margin:0 0 4px;text-transform:uppercase}
+.gbox .pat{font-size:.84rem;color:#c9bbe8;margin:0 0 9px}
+.pairs{display:flex;flex-wrap:wrap;gap:7px}
+.pchip{font-family:var(--head);font-weight:700;font-size:.85rem;letter-spacing:.8px;background:var(--parch);border:2px solid #2b1c07;border-radius:8px;padding:3px 11px;color:var(--ink)}
+.pchip b{color:#8f1230}
+.hidden{display:none}
+
+/* ---------- footer (regla permanente del profesor) ----------
+   Va FUERA de .wrap y fuera de cualquier seccion que se pueda ocultar,
+   asi queda visible este en la pantalla que este el alumno. */
+.foot{
+  margin:6px auto 0; max-width:900px; text-align:center;
+  font-family:var(--head); font-weight:700; font-size:.82rem; letter-spacing:1.6px;
+  color:var(--gold-lt); border-top:3px solid var(--gold); padding:16px 10px 4px;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <span class="chapter" id="heroChapter"></span>
+    <h1 id="heroTitle"></h1>
+    <p id="heroSub"></p>
+    <div class="verbline" id="heroVerbs"></div>
+  </div>
+
+  <div class="quest" id="questBar"></div>
+
+  <!-- ============ TRIAL I: MEMORY SPEED RUN ============ -->
+  <section class="card arena" id="srCard">
+    <span class="tag">Trial I</span>
+    <h2>Memory Speed Run</h2>
+    <p class="sub">One verb at a time, against the clock. Answer fast to score more. If the bar runs out, the point is gone.</p>
+    <div class="hud">
+      <span class="chip" id="srScore"></span>
+      <span class="chip streak" id="srStreak"></span>
+      <span class="chip combo" id="srCombo"></span>
+      <span class="chip clock" id="srClock"></span>
+    </div>
+    <div class="dots" id="srDots"></div>
+    <div class="timer" id="srTimer"><span id="srTimerBar"></span></div>
+    <div id="srStage"></div>
+  </section>
+
+  <!-- ============ TRIAL II: THE VERB VAULT ============ -->
+  <section class="card" id="vaultCard">
+    <span class="tag">Trial II</span>
+    <h2>The Verb Vault</h2>
+    <p class="sub" id="vaultSub"></p>
+    <div class="vaultbox">
+      <div class="vt">Verb vault</div>
+      <div class="vchips" id="vaultChips"></div>
+    </div>
+    <div id="vaultBox"></div>
+    <div class="extraline" id="extraLine"></div>
+    <div class="btnrow">
+      <button class="btn" id="vaultCheck">Check my answers</button>
+      <button class="btn ghost" id="vaultReset">Try again</button>
+      <span class="scoreline" id="vaultScore"></span>
+    </div>
+  </section>
+
+  <!-- ============ TRIAL III: SHIELD AND SPEAR ============ -->
+  <section class="card" id="formsCard">
+    <span class="tag">Trial III</span>
+    <h2>Shield &amp; Spear</h2>
+    <p class="sub">Trial II was all about affirmative sentences. Now build the other two shapes: the negative (your shield) and the question (your spear).</p>
+    <div id="formsNote"></div>
+    <div id="formsBox"></div>
+    <div class="btnrow">
+      <button class="btn" id="formsCheck">Check my answers</button>
+      <button class="btn ghost" id="formsReset">Try again</button>
+      <span class="scoreline" id="formsScore"></span>
+    </div>
+  </section>
+
+  <!-- ============ CODEX (reference, not an exercise) ============ -->
+  <section class="card codex" id="codexCard">
+    <span class="tag">Codex</span>
+    <h2>The Hero&rsquo;s Codex</h2>
+    <p class="sub">Every verb in this chapter, with its past form. Open it <b>after</b> the three trials, not before.</p>
+    <div class="btnrow" style="margin-top:0">
+      <button class="btn dark" id="codexToggle">Open the codex</button>
+    </div>
+    <div id="codexBody" class="hidden" style="margin-top:18px"></div>
+  </section>
+
+</div>
+
+<footer class="foot">Copyright Prof Dan M. Mecikovsky</footer>
+
+<script id="data-block">
+/* ============================================================
+   SOLO CONTENIDO. Ni una referencia al DOM en este bloque.
+   ============================================================
+   REPASO FINAL: los 30 verbos de los grupos 1 a 8, MEZCLADOS y
+   sin decir de que grupo viene cada uno, que es como se los va a
+   encontrar en la prueba. Este archivo se usa despues de los
+   otros tres.
+   El corte 6 / 7 / 8 del codex sigue siendo la reconstruccion
+   por patron del archivo 3. Ver el aviso alli.
+   ============================================================ */
+var DATA = {
+
+meta: {
+  chapter: "Chapter IV",
+  title: "The Dragon's Labyrinth",
+  sub: "All thirty verbs, from every group, mixed together and with no group names to help you. This is the one that looks like the real test.",
+  verbs: "groups 1 &middot; 2 &middot; 3 &middot; 4 &middot; 5 &middot; 6 &middot; 7 &middot; 8 &mdash; all thirty verbs"
+},
+
+/* ---------- TRIAL I: memory speed run ---------- */
+speedrun: [
+  { mode: "verb", q: "THROW",
+    options: ["thrown","throwed","threw"], correct: 2,
+    why: "Throw becomes threw. Thrown is the third form and it cannot stand alone in a past sentence.",
+    tip: "If a word ends in -en or -n like thrown, it is waiting for have or was. Threw needs nobody." },
+
+  { mode: "verb", q: "FEEL",
+    options: ["felt","fell","feeled"], correct: 0,
+    why: "Feel becomes felt. Fell is the past of fall, and that is a completely different verb.",
+    tip: "Felt is about emotions, fell is about the floor. Ask yourself which one the sentence means." },
+
+  { mode: "verb", q: "PUT",
+    options: ["putted","put","pat"], correct: 1,
+    why: "Put does not change: the present and the past are exactly the same word.",
+    tip: "Nothing is missing when the word looks the same. Putted is never correct." },
+
+  { mode: "verb", q: "STEAL",
+    options: ["stole","stealed","stolen"], correct: 0,
+    why: "Steal becomes stole, and stolen is the third form that needs was or has.",
+    tip: "The bike was stolen needs was. Somebody stole the bike needs nothing extra." },
+
+  { mode: "verb", q: "CHOOSE",
+    options: ["choosed","chose","choosen"], correct: 1,
+    why: "Choose becomes chose and drops one of its two o's.",
+    tip: "Two o's for now, one o for before. That is the whole rule for this verb." },
+
+  { mode: "verb", q: "BRING",
+    options: ["brang","brought","bringed"], correct: 1,
+    why: "Bring becomes brought, and the -ing ending disappears completely.",
+    tip: "Brang sounds natural to a lot of people and it is still wrong. Bring only ever goes to brought." },
+
+  { mode: "verb", q: "CATCH",
+    options: ["cought","catched","caught"], correct: 2,
+    why: "Catch becomes caught, with a and u in the middle, not o and u.",
+    tip: "Say it slowly and spell it c-a-u-g-h-t. The a is the letter people get wrong." },
+
+  { mode: "verb", q: "COME",
+    options: ["came","comed","come"], correct: 0,
+    why: "Come becomes came, so the o in the middle turns into an a.",
+    tip: "Come and came are one letter apart, so always read your answer again before moving on." },
+
+  { mode: "verb", q: "KNOW",
+    options: ["knowed","known","knew"], correct: 2,
+    why: "Know becomes knew. Known is the third form and it needs have in front of it.",
+    tip: "Knew sounds like new. If you can hear that sound, you have the right word." },
+
+  { mode: "sentence", q: "The rescue helicopter ___ over the burning forest.",
+    options: ["flied","flew","fly"], correct: 1,
+    why: "The rescue already happened, so fly becomes flew.",
+    tip: "A story about something that finished puts every one of its verbs in the past." },
+
+  { mode: "sentence", q: "The ball ___ the window and everybody ran away.",
+    options: ["hit","hitted","hits"], correct: 0,
+    why: "Ran is past, so the first verb is past too, and hit never changes its shape.",
+    tip: "When one verb in the sentence is clearly past, that decides the tense for all of them." },
+
+  { mode: "sentence", q: "She ___ her name on the first page of her notebook.",
+    options: ["writed","wrote","written"], correct: 1,
+    why: "Write becomes wrote here, and written would need has or was in front of it.",
+    tip: "Wrote goes alone. Written always brings a friend: has written, was written." },
+
+  { mode: "sentence", q: "My parents ___ me a bike for my last birthday.",
+    options: ["buyed","bought","buy"], correct: 1,
+    why: "Last birthday is a day that is over, so buy becomes bought.",
+    tip: "The word last is one of the strongest past signals in English: last night, last week, last birthday." },
+
+  { mode: "sentence", q: "Our teacher ___ us how to draw a castle.",
+    options: ["teached","taught","teach"], correct: 1,
+    why: "The lesson already happened, so teach becomes taught.",
+    tip: "Teached does not exist. Teach and catch both end in -aught in the past." },
+
+  { mode: "sentence", q: "The plants in my garden ___ very fast last spring.",
+    options: ["growed","grew","grow"], correct: 1,
+    why: "Last spring is a finished season, so grow becomes grew.",
+    tip: "Grow, know and throw all end in -ew in the past, and none of them takes -ed." },
+
+  { mode: "sentence", q: "I ___ very badly the night before the school trip.",
+    options: ["sleeped","slept","sleep"], correct: 1,
+    why: "The night before the school trip is over, so sleep becomes slept.",
+    tip: "Sleep loses one e and gains a t. The same thing happens to feel and leave." }
+],
+
+/* ---------- TRIAL II: verb vault ---------- */
+vault: {
+  sub: "Complete the sentences with the Simple Past of the verbs in the vault. The verbs come from all eight groups and they are not in order. There is one extra verb: with that one, write your own sentence at the end.",
+  box: ["FLY","KNOW","SLEEP","CUT","TELL","SPEAK","DRIVE","WRITE","BUY","FIGHT","CATCH","GIVE","COME"],
+  items: [
+    { before: "The rescue helicopter ", after: " over the burning forest for two hours.",
+      answers: ["flew"], verb: "FLY",
+      why: "Fly becomes flew, and for two hours tells you the flight is finished.",
+      tip: "For two hours, for ten minutes and all day mark a period that is already closed." },
+
+    { before: "Nobody in my class ", after: " the name of the new student.",
+      answers: ["knew"], verb: "KNOW",
+      why: "Know becomes knew, and nobody does not change the shape of the past verb.",
+      tip: "Knew has no -ed and no -s. In the past, every subject uses exactly the same form." },
+
+    { before: "I ", after: " very badly the night before the big match.",
+      answers: ["slept"], verb: "SLEEP",
+      why: "Sleep becomes slept, and the night before the match has already gone by.",
+      tip: "Slept ends in -t, like felt, left and burnt. They all belong to the same sound family." },
+
+    { before: "My brother ", after: " his finger with a piece of paper.",
+      answers: ["cut"], verb: "CUT",
+      why: "Cut never changes, so the past of cut is cut, even in an accident like this one.",
+      tip: "Nothing is missing here. Cut, hit and put look the same in both tenses." },
+
+    { before: "The guide ", after: " us the story of the old stone bridge.",
+      answers: ["told"], verb: "TELL",
+      why: "Tell becomes told, and after told comes the person who listened: told us.",
+      tip: "Told almost always has a person right after it: told us, told me, told the class." },
+
+    { before: "The head teacher ", after: " to all the parents in the hall.",
+      answers: ["spoke"], verb: "SPEAK",
+      why: "Speak becomes spoke, and the little word to says who was listening.",
+      tip: "She spoke to the parents, never she spoke the parents. Keep the to." },
+
+    { before: "My mum ", after: " to the hospital in the middle of the storm.",
+      answers: ["drove"], verb: "DRIVE",
+      why: "Drive becomes drove, and the storm places the whole scene in the past.",
+      tip: "Drove is the verb. A drive with an a in front is a noun and a different word." },
+
+    { before: "She ", after: " a long letter to her cousin in Ireland.",
+      answers: ["wrote"], verb: "WRITE",
+      why: "Write becomes wrote, and the silent w at the front stays where it is.",
+      tip: "Wrote always starts with wr-. If the w disappears, it is a different word." },
+
+    { before: "We ", after: " two tickets for the Saturday show.",
+      answers: ["bought"], verb: "BUY",
+      why: "Buy becomes bought, so only the b survives and the rest turns into -ought.",
+      tip: "Bought and brought are almost identical. The r is the only difference between them." },
+
+    { before: "The two teams ", after: " hard until the very last minute.",
+      answers: ["fought"], verb: "FIGHT",
+      why: "Fight becomes fought, and until the last minute closes the match in the past.",
+      tip: "Fight already ends in -ght, so in the past you only change the vowel to ou." },
+
+    { before: "The dog ", after: " the ball in the air.",
+      answers: ["caught"], verb: "CATCH",
+      why: "Catch becomes caught, and the ball never reached the floor.",
+      tip: "Caught rhymes with taught and both are spelt with a-u. Never write cought." },
+
+    { before: "My uncle ", after: " me his old guitar.",
+      answers: ["gave"], verb: "GIVE",
+      why: "Give becomes gave, and after gave the person comes before the thing: gave me his guitar.",
+      tip: "Give - gave and come - came both swap their vowel for an a." }
+  ],
+  extra: {
+    verb: "COME", past: "came",
+    prompt: "The verb nobody used is COME. Write your own sentence in the Simple Past with it.",
+    model: "The school bus came ten minutes late this morning.",
+    modelnote: "Your sentence does not have to be this one. It only has to use came and make sense."
+  }
+},
+
+/* ---------- TRIAL III: negative and question ---------- */
+forms: {
+  note: {
+    title: "One past in one sentence",
+    lines: [
+      "My uncle gave me his guitar. -> The past is inside the verb: gave.",
+      "My uncle did not give me his guitar. -> did not is already the past, so give goes back to its base form.",
+      "Did my uncle give me his guitar? -> Did opens the question, and the verb is base again."
+    ],
+    warning: "This rule works for all thirty verbs, from every group. After did or didn't, the main verb is always the base form."
+  },
+  items: [
+    { base: "fly", past: "flew",
+      aff: "The helicopter flew over the forest.",
+      neg: ["The helicopter didn't fly over the forest.","The helicopter did not fly over the forest."],
+      que: ["Did the helicopter fly over the forest?"],
+      why: "Flew goes back to fly, because didn't and did already carry the past.",
+      tip: "Two steps, always: take the past out of the verb and hand it to did." },
+
+    { base: "sleep", past: "slept",
+      aff: "I slept badly before the match.",
+      neg: ["I didn't sleep badly before the match.","I did not sleep badly before the match."],
+      que: ["Did I sleep badly before the match?"],
+      why: "Slept turns back into sleep, so the -t at the end disappears.",
+      tip: "Group 2 verbs lose their -t after did: slept becomes sleep, felt becomes feel." },
+
+    { base: "put", past: "put",
+      aff: "She put the tickets in her bag.",
+      neg: ["She didn't put the tickets in her bag.","She did not put the tickets in her bag."],
+      que: ["Did she put the tickets in her bag?"],
+      why: "Put is the same word in both tenses, so nothing changes after didn't and did.",
+      tip: "With she the verb still gets no -s: it is did she put, not did she puts." },
+
+    { base: "tell", past: "told",
+      aff: "The guide told us the story.",
+      neg: ["The guide didn't tell us the story.","The guide did not tell us the story."],
+      que: ["Did the guide tell us the story?"],
+      why: "Told goes back to tell, and the double l comes back with it.",
+      tip: "Told loses its o and gets its second l back. Check both letters when you write it." },
+
+    { base: "choose", past: "chose",
+      aff: "They chose the blue team.",
+      neg: ["They didn't choose the blue team.","They did not choose the blue team."],
+      que: ["Did they choose the blue team?"],
+      why: "Chose becomes choose again, so the second o comes back after did.",
+      tip: "This one is the opposite of the vault: there you removed an o, here you put it back." },
+
+    { base: "buy", past: "bought",
+      aff: "We bought two tickets for the show.",
+      neg: ["We didn't buy two tickets for the show.","We did not buy two tickets for the show."],
+      que: ["Did we buy two tickets for the show?"],
+      why: "Bought becomes buy again, and the long -ought ending vanishes.",
+      tip: "The longer a past form looks, the easier it is to forget to change it. Bought never follows did." },
+
+    { base: "catch", past: "caught",
+      aff: "The dog caught the ball.",
+      neg: ["The dog didn't catch the ball.","The dog did not catch the ball."],
+      que: ["Did the dog catch the ball?"],
+      why: "Caught goes back to catch, and the -tch returns in place of -ught.",
+      tip: "Caught and catch look like two different words, so this is a classic mistake. Watch it." },
+
+    { base: "give", past: "gave",
+      aff: "My uncle gave me his old guitar.",
+      neg: ["My uncle didn't give me his old guitar.","My uncle did not give me his old guitar."],
+      que: ["Did my uncle give me his old guitar?"],
+      why: "Gave becomes give, so the a in the middle turns back into an i.",
+      tip: "If your answer still has an a in the middle after did, you have not finished the change." }
+  ]
+},
+
+/* ---------- CODEX: los ocho grupos completos ---------- */
+codex: [
+  { name: "Group 1", pattern: "The past ends in -ew.",
+    pairs: [["fly","flew"],["know","knew"],["grow","grew"],["throw","threw"]] },
+  { name: "Group 2", pattern: "The past ends in -t.",
+    pairs: [["feel","felt"],["sleep","slept"],["leave","left"]] },
+  { name: "Group 3", pattern: "The verb does not change.",
+    pairs: [["hit","hit"],["cut","cut"],["put","put"]] },
+  { name: "Group 4", pattern: "The past has an o in the middle.",
+    pairs: [["tell","told"],["sell","sold"],["speak","spoke"],["steal","stole"],["choose","chose"],
+            ["wake","woke"],["drive","drove"],["ride","rode"],["write","wrote"]] },
+  { name: "Group 5", pattern: "The past ends in -ought.",
+    pairs: [["bring","brought"],["buy","bought"],["fight","fought"],["think","thought"]] },
+  { name: "Group 6", pattern: "The past ends in -t.",
+    pairs: [["burn","burnt"],["hurt","hurt"]] },
+  { name: "Group 7", pattern: "The past ends in -aught.",
+    pairs: [["catch","caught"],["teach","taught"]] },
+  { name: "Group 8", pattern: "The vowel in the middle becomes a.",
+    pairs: [["make","made"],["give","gave"],["come","came"]] }
+]
+
+};
+</script>
+
+<script id="engine-block">
+(function(){
+"use strict";
+
+/* ===== registries: el DOM guarda SOLO un indice numerico ===== */
+var REG = { sr: [], vault: [], forms: [] };
+
+/* ===== iconos svg estaticos (decorativos) ===== */
+var ICONS = {
+  shield: '<svg class="ic" viewBox="0 0 24 24"><path d="M12 2 20.5 5v6.2c0 5.2-3.6 9.2-8.5 10.8C7.1 20.4 3.5 16.4 3.5 11.2V5z"/></svg>',
+  sword:  '<svg class="ic" viewBox="0 0 24 24"><path d="M12 1.5l2.2 3.6v9.4h-4.4V5.1z"/><rect x="6" y="14.6" width="12" height="2.4" rx="1.2"/><rect x="10.8" y="17.2" width="2.4" height="3.6" rx="1.2"/><rect x="9.4" y="20.2" width="5.2" height="2" rx="1"/></svg>',
+  scroll: '<svg class="ic" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M6 2h11a2.5 2.5 0 0 1 2.5 2.5V18a4 4 0 0 0 4 4H8a4 4 0 0 1-4-4V4.5A2.5 2.5 0 0 1 6 2zm2 5h9v2H8zm0 4h9v2H8zm0 4h6v2H8z"/></svg>',
+  star:   '<svg class="ic" viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.4l-5.8 3.1 1.1-6.5L2.6 9.4l6.5-.9z"/></svg>',
+  crown:  '<svg class="ic" viewBox="0 0 24 24"><path d="M3 7.5l4 3.2L12 4l5 6.7 4-3.2-1.9 11.3H4.9z"/></svg>',
+  bolt:   '<svg class="ic" viewBox="0 0 24 24"><path d="M13 2 4 13.5h6L11 22l9-11.5h-6z"/></svg>',
+  flame:  '<svg class="ic" viewBox="0 0 24 24"><path d="M12 2c3.2 4.2 6.2 5.6 6.2 9.8A6.2 6.2 0 0 1 5.8 12c0-2.2 1.1-3.7 2.3-4.9.3 1.4 1 2.1 1.9 2.4C10.3 7.2 11 4.6 12 2z"/></svg>',
+  glass:  '<svg class="ic" viewBox="0 0 24 24"><path d="M6 2h12v2h-1v2.5L13.2 12 17 17.5V20h1v2H6v-2h1v-2.5L10.8 12 7 6.5V4H6z"/></svg>'
+};
+function icon(name){
+  var s = document.createElement("span");
+  s.innerHTML = ICONS[name] || "";
+  return s.firstChild;
+}
+
+/* ===== helpers ===== */
+function normalize(s){
+  return String(s).toLowerCase()
+    .replace(/[‘’ʼ]/g, "'")
+    .replace(/[^a-z0-9' ]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+/* ADAPTACION A PRIMARIA (se aparta a proposito del normalize del SPECS):
+   a los 10 anos "didnt" y "oclock" sin apostrofe son un error de TIPEO,
+   no de gramatica, y lo que se evalua aca es did + verbo en base. Por eso
+   la comparacion tambien se hace ciega al apostrofe. Ojo: esto NO afloja
+   la gramatica, "didn't grew" sigue estando mal. */
+function loose(s){ return normalize(s).replace(/'/g, ""); }
+function matches(given, list){
+  var g = normalize(given);
+  if(g === "") return false;
+  var gl = loose(given);
+  for(var i = 0; i < list.length; i++){
+    if(normalize(list[i]) === g) return true;
+    if(loose(list[i]) === gl) return true;
+  }
+  return false;
+}
+function hasWord(sentence, word){
+  var t = normalize(sentence).split(" ");
+  var w = normalize(word);
+  for(var i = 0; i < t.length; i++){ if(t[i] === w) return true; }
+  return false;
+}
+function wordCount(s){
+  var t = normalize(s);
+  return t === "" ? 0 : t.split(" ").length;
+}
+function el(tag, cls, txt){
+  var n = document.createElement(tag);
+  if(cls) n.className = cls;
+  if(txt !== undefined && txt !== null) n.textContent = txt;
+  return n;
+}
+
+/* Caja Why + Hero tip. Se muestra SIEMPRE, este bien o mal. */
+function explainBox(ok, answerText, why, tip){
+  var box = el("div", "exp " + (ok ? "right" : "wrong"));
+  if(answerText){
+    var p0 = el("p");
+    p0.appendChild(el("span", "sol", "Answer: " + answerText));
+    box.appendChild(p0);
+  }
+  var p1 = el("p");
+  p1.appendChild(el("b", "lab why", "Why"));
+  p1.appendChild(document.createTextNode(why));
+  box.appendChild(p1);
+  var p2 = el("p");
+  p2.appendChild(el("b", "lab tip", "Hero tip"));
+  p2.appendChild(document.createTextNode(tip));
+  box.appendChild(p2);
+  return box;
+}
+function clearExp(scope){
+  var old = scope.querySelectorAll(".exp");
+  for(var i = 0; i < old.length; i++){ old[i].parentNode.removeChild(old[i]); }
+}
+
+/* ============================================================
+   CABECERA + BARRA DE MEDALLAS
+   ============================================================ */
+document.title = "Irregular Past Simple - " + DATA.meta.chapter + ": " + DATA.meta.title;
+document.getElementById("heroChapter").textContent = DATA.meta.chapter;
+document.getElementById("heroTitle").textContent = DATA.meta.title;
+document.getElementById("heroSub").textContent = DATA.meta.sub;
+document.getElementById("heroVerbs").innerHTML = DATA.meta.verbs;
+
+var QUESTS = [
+  { key: "sr",    label: "Speed Run",     ic: "bolt"   },
+  { key: "vault", label: "Verb Vault",    ic: "scroll" },
+  { key: "forms", label: "Shield & Spear", ic: "shield" }
+];
+var questBar = document.getElementById("questBar");
+var questEls = {};
+(function buildQuest(){
+  for(var i = 0; i < QUESTS.length; i++){
+    var q = QUESTS[i];
+    var d = el("div", "medal");
+    var mi = el("div", "mi");
+    mi.appendChild(icon(q.ic));
+    var txt = el("div");
+    txt.appendChild(el("div", "mt", q.label));
+    var sc = el("div", "ms", "not tried yet");
+    txt.appendChild(sc);
+    d.appendChild(mi);
+    d.appendChild(txt);
+    questBar.appendChild(d);
+    questEls[q.key] = { wrap: d, score: sc };
+  }
+})();
+function setQuest(key, got, total){
+  var q = questEls[key];
+  q.score.textContent = got + " / " + total;
+  if(got === total) q.wrap.classList.add("won");
+  else q.wrap.classList.remove("won");
+}
+
+/* ============================================================
+   TRIAL I - MEMORY SPEED RUN
+   Timer por pregunta. Puntos = base + bonus por rapidez, con
+   multiplicador de racha. Las explicaciones completas van al
+   final, en el panel de review, para no frenar la carrera.
+   ============================================================ */
+var QTIME = 10000;            /* ms por pregunta */
+var srStage = document.getElementById("srStage");
+var srDots  = document.getElementById("srDots");
+var srScore = document.getElementById("srScore");
+var srStreakEl = document.getElementById("srStreak");
+var srComboEl  = document.getElementById("srCombo");
+var srClock = document.getElementById("srClock");
+var srTimer = document.getElementById("srTimer");
+var srBar   = document.getElementById("srTimerBar");
+function freshS(){ return { i: -1, points: 0, streak: 0, best: 0, right: 0, elapsed: 0, qStart: 0, results: [] }; }
+var S = freshS(), tickHandle = null, runHandle = null;
+
+function comboOf(streak){
+  if(streak >= 6) return 3;
+  if(streak >= 3) return 2;
+  return 1;
+}
+function drawSRHud(){
+  srScore.textContent = "";
+  srScore.appendChild(icon("star"));
+  srScore.appendChild(document.createTextNode(" " + S.points + " pts"));
+  srStreakEl.textContent = "";
+  srStreakEl.appendChild(icon("flame"));
+  srStreakEl.appendChild(document.createTextNode(" Streak " + S.streak));
+  srComboEl.textContent = "x" + comboOf(S.streak) + " combo";
+  srClock.textContent = "";
+  srClock.appendChild(icon("glass"));
+  srClock.appendChild(document.createTextNode(" " + (S.elapsed / 1000).toFixed(1) + "s"));
+}
+function drawSRDots(){
+  srDots.innerHTML = "";
+  for(var i = 0; i < DATA.speedrun.length; i++){
+    var cls = "dot";
+    if(S.results[i] === true) cls += " y";
+    else if(S.results[i] === false) cls += " n";
+    if(i === S.i) cls += " now";
+    srDots.appendChild(el("span", cls));
+  }
+}
+function stopTimers(){
+  if(tickHandle){ clearInterval(tickHandle); tickHandle = null; }
+  if(runHandle){ clearInterval(runHandle); runHandle = null; }
+}
+function srQuestion(){
+  stopTimers();
+  drawSRDots();
+  drawSRHud();
+  srTimer.classList.remove("hidden");
+  srTimer.classList.remove("low");
+  srBar.style.width = "100%";
+  srStage.innerHTML = "";
+  REG.sr.length = 0;
+
+  var d = DATA.speedrun[S.i];
+  var id = REG.sr.push({ data: d }) - 1;
+
+  var box = el("div", "qbox");
+  if(d.mode === "verb"){
+    box.appendChild(el("div", "vhint", "Question " + (S.i + 1) + " of " + DATA.speedrun.length + (d.hint ? " · " + d.hint : "")));
+    box.appendChild(el("div", "vword", d.q));
+    box.appendChild(el("div", "vhint", "What is the Simple Past?"));
+  } else {
+    box.appendChild(el("div", "vhint", "Question " + (S.i + 1) + " of " + DATA.speedrun.length));
+    box.appendChild(el("p", "qsent", d.q));
+  }
+  var opts = el("div", "opts");
+  for(var j = 0; j < d.options.length; j++){
+    var b = el("button", "opt", d.options[j]);
+    b.type = "button";
+    b.setAttribute("data-sid", String(id));
+    b.setAttribute("data-opt", String(j));
+    b.addEventListener("click", onSRAnswer);
+    opts.appendChild(b);
+  }
+  box.appendChild(opts);
+  srStage.appendChild(box);
+
+  S.qStart = Date.now();
+  tickHandle = setInterval(function(){
+    var left = QTIME - (Date.now() - S.qStart);
+    if(left <= 0){ srResolve(box, id, -1, 0); return; }
+    var frac = left / QTIME;
+    srBar.style.width = (frac * 100).toFixed(1) + "%";
+    if(frac < .3) srTimer.classList.add("low");
+  }, 60);
+  runHandle = setInterval(function(){
+    S.elapsed = S.elapsed + 100;
+    drawSRHud();
+  }, 100);
+}
+function onSRAnswer(ev){
+  var b = ev.currentTarget;
+  var id = parseInt(b.getAttribute("data-sid"), 10);
+  var j  = parseInt(b.getAttribute("data-opt"), 10);
+  var left = Math.max(0, QTIME - (Date.now() - S.qStart));
+  srResolve(b.parentNode.parentNode, id, j, left / QTIME);
+}
+function srResolve(box, id, picked, frac){
+  stopTimers();
+  var d = REG.sr[id].data;
+  var ok = picked === d.correct;
+
+  var btns = box.querySelectorAll(".opt");
+  for(var k = 0; k < btns.length; k++){
+    btns[k].disabled = true;
+    if(k === d.correct) btns[k].classList.add("good");
+    else if(k === picked) btns[k].classList.add("bad");
+  }
+
+  S.results[S.i] = ok;
+  if(ok){
+    S.streak++;
+    if(S.streak > S.best) S.best = S.streak;
+    var gained = Math.round((100 + 100 * frac) * comboOf(S.streak - 1 >= 0 ? S.streak : 1));
+    S.points = S.points + gained;
+    S.right++;
+    var f = el("div", "flash y", "+" + gained + " points");
+    box.appendChild(f);
+  } else {
+    S.streak = 0;
+    box.appendChild(el("div", "flash n", picked === -1 ? "Time is up." : "Not this one."));
+  }
+  box.appendChild(el("div", "pair", (d.mode === "verb" ? d.q.toLowerCase() : "answer") + "  →  " + d.options[d.correct]));
+  drawSRHud();
+  drawSRDots();
+
+  var row = el("div", "btnrow");
+  row.style.justifyContent = "center";
+  var next = el("button", "btn", S.i === DATA.speedrun.length - 1 ? "See my run" : "Next verb");
+  next.type = "button";
+  next.addEventListener("click", function(){
+    if(S.i === DATA.speedrun.length - 1){ srFinal(); }
+    else { S.i++; srQuestion(); }
+  });
+  row.appendChild(next);
+  box.appendChild(row);
+}
+function srFinal(){
+  stopTimers();
+  S.i = -1;
+  drawSRDots();
+  srTimer.classList.add("hidden");
+  var total = DATA.speedrun.length;
+  var msg;
+  if(S.right === total) msg = "Perfect run. Not one verb escaped.";
+  else if(S.right >= total - 2) msg = "Strong run. Two more and the sword is yours.";
+  else if(S.right >= total / 2) msg = "Good start. Read the scroll below, then run again.";
+  else msg = "The verbs won this time. Read the scroll and run again.";
+
+  srStage.innerHTML = "";
+  var f = el("div", "final");
+  f.appendChild(el("div", "big", S.points + " pts"));
+  f.appendChild(el("div", "msg", msg));
+  var st = el("div", "stats");
+  st.appendChild(document.createTextNode("Correct: " + S.right + " / " + total));
+  st.appendChild(document.createElement("br"));
+  st.appendChild(document.createTextNode("Best streak: " + S.best));
+  st.appendChild(document.createElement("br"));
+  st.appendChild(document.createTextNode("Time: " + (S.elapsed / 1000).toFixed(1) + " seconds"));
+  f.appendChild(st);
+  var again = el("button", "btn", "Run again");
+  again.type = "button";
+  again.addEventListener("click", startSR);
+  f.appendChild(again);
+
+  /* review: TODOS los items, bien o mal, con Why + Hero tip (regla del SPECS) */
+  var rev = el("div", "review");
+  var h = el("h3");
+  h.appendChild(icon("scroll"));
+  h.appendChild(document.createTextNode(" The scroll of this run"));
+  rev.appendChild(h);
+  for(var i = 0; i < DATA.speedrun.length; i++){
+    var d = DATA.speedrun[i];
+    var ok = S.results[i] === true;
+    var ri = el("div", "ritem");
+    var top = el("div", "rtop");
+    top.appendChild(document.createTextNode((i + 1) + ". " + (d.mode === "verb" ? d.q + " → " + d.options[d.correct] : d.options[d.correct])));
+    top.appendChild(el("span", "mark " + (ok ? "y" : "n"), ok ? "right" : "review"));
+    ri.appendChild(top);
+    if(d.mode === "sentence") ri.appendChild(el("p", "qsent", d.q));
+    var ex = explainBox(ok, null, d.why, d.tip);
+    ex.style.marginTop = "6px";
+    ri.appendChild(ex);
+    rev.appendChild(ri);
+  }
+  f.appendChild(rev);
+  srStage.appendChild(f);
+  setQuest("sr", S.right, total);
+}
+function startSR(){
+  S = freshS();
+  S.i = 0;
+  srQuestion();
+}
+
+/* Pantalla de salida. El cronometro NO puede arrancar solo al abrir el
+   archivo: si no, la primera pregunta se vence mientras el chico todavia
+   esta leyendo el titulo de la pagina. Arranca cuando el aprieta. */
+function srReady(){
+  stopTimers();
+  S = freshS();
+  srTimer.classList.add("hidden");
+  drawSRDots();
+  drawSRHud();
+  srStage.innerHTML = "";
+  var box = el("div", "qbox");
+  box.appendChild(el("div", "vhint", DATA.speedrun.length + " verbs · ten seconds each"));
+  box.appendChild(el("div", "vword", "READY?"));
+  box.appendChild(el("p", "qsent", "The faster you answer, the more points you win. Three right answers in a row give you a double combo. When the bar empties, that verb is gone."));
+  var row = el("div", "btnrow");
+  row.style.justifyContent = "center";
+  var b = el("button", "btn", "Start the run");
+  b.type = "button";
+  b.addEventListener("click", startSR);
+  row.appendChild(b);
+  box.appendChild(row);
+  srStage.appendChild(box);
+}
+
+/* ============================================================
+   TRIAL II - THE VERB VAULT
+   Caja de infinitivos + oraciones afirmativas + verbo extra
+   con produccion propia.
+   ============================================================ */
+var vaultSubEl = document.getElementById("vaultSub");
+var vaultChips = document.getElementById("vaultChips");
+var vaultBox   = document.getElementById("vaultBox");
+var extraLine  = document.getElementById("extraLine");
+var vaultScore = document.getElementById("vaultScore");
+var chipEls = {};
+
+vaultSubEl.textContent = DATA.vault.sub;
+
+function renderVault(){
+  vaultChips.innerHTML = "";
+  chipEls = {};
+  for(var c = 0; c < DATA.vault.box.length; c++){
+    var chip = el("span", "vchip", DATA.vault.box[c]);
+    vaultChips.appendChild(chip);
+    chipEls[DATA.vault.box[c]] = chip;
+  }
+
+  vaultBox.innerHTML = "";
+  REG.vault.length = 0;
+  for(var i = 0; i < DATA.vault.items.length; i++){
+    var d = DATA.vault.items[i];
+    var id = REG.vault.push({ data: d }) - 1;
+    var item = el("div", "item");
+    item.setAttribute("data-vid", String(id));
+    var line = el("div", "sline");
+    line.appendChild(el("span", "rn", String(i + 1)));
+    var txt = el("span");
+    txt.appendChild(document.createTextNode(d.before));
+    var inp = document.createElement("input");
+    inp.type = "text";
+    inp.setAttribute("autocomplete", "off");
+    inp.setAttribute("autocapitalize", "off");
+    inp.setAttribute("spellcheck", "false");
+    inp.setAttribute("data-vid", String(id));
+    txt.appendChild(inp);
+    txt.appendChild(document.createTextNode(d.after));
+    line.appendChild(txt);
+    item.appendChild(line);
+    vaultBox.appendChild(item);
+  }
+
+  extraLine.innerHTML = "";
+  var t = el("div", "et");
+  t.appendChild(icon("crown"));
+  t.appendChild(document.createTextNode(" The extra verb"));
+  extraLine.appendChild(t);
+  extraLine.appendChild(el("p", "eh", DATA.vault.extra.prompt));
+  var ei = document.createElement("input");
+  ei.type = "text";
+  ei.id = "extraInput";
+  ei.setAttribute("autocomplete", "off");
+  ei.setAttribute("spellcheck", "false");
+  ei.setAttribute("placeholder", "Write your sentence here.");
+  extraLine.appendChild(ei);
+
+  vaultScore.textContent = "";
+}
+function checkVault(){
+  clearExp(vaultBox);
+  clearExp(extraLine);
+  var items = vaultBox.querySelectorAll(".item");
+  var got = 0;
+  for(var i = 0; i < items.length; i++){
+    var item = items[i];
+    var entry = REG.vault[parseInt(item.getAttribute("data-vid"), 10)];
+    var d = entry.data;
+    var inp = item.querySelector("input");
+    var ok = matches(inp.value, d.answers);
+    inp.classList.remove("ok", "no");
+    inp.classList.add(ok ? "ok" : "no");
+    if(ok) got++;
+    if(chipEls[d.verb]) chipEls[d.verb].className = "vchip used";
+    item.appendChild(explainBox(ok, d.answers[0], d.why, d.tip));
+  }
+  if(chipEls[DATA.vault.extra.verb]) chipEls[DATA.vault.extra.verb].className = "vchip extra";
+
+  /* verbo extra: no se corrige la produccion libre, se verifica el checklist */
+  var ei = document.getElementById("extraInput");
+  var s = ei.value;
+  var usesForm = hasWord(s, DATA.vault.extra.past);
+  var longEnough = wordCount(s) >= 4;
+  var notEmpty = normalize(s) !== "";
+  ei.classList.remove("ok", "no");
+  ei.classList.add(usesForm && longEnough ? "ok" : "no");
+
+  var cl = el("div", "checklist");
+  cl.appendChild(el("span", "needtitle", "Your sentence with " + DATA.vault.extra.verb));
+  var ul = document.createElement("ul");
+  var l1 = el("li", null, (notEmpty ? "✓ " : "✗ ") + "You wrote a sentence.");
+  var l2 = el("li", null, (usesForm ? "✓ " : "✗ ") + "It uses the past form " + DATA.vault.extra.past + ".");
+  var l3 = el("li", null, (longEnough ? "✓ " : "✗ ") + "It has at least four words.");
+  ul.appendChild(l1); ul.appendChild(l2); ul.appendChild(l3);
+  cl.appendChild(ul);
+  var mb = el("div", "modelbox");
+  mb.appendChild(el("span", "needtitle", "One possible sentence"));
+  mb.appendChild(el("p", null, DATA.vault.extra.model));
+  cl.appendChild(mb);
+  cl.appendChild(el("span", "selfnote", DATA.vault.extra.modelnote + " Your teacher checks the spelling and the rest of the words."));
+  extraLine.appendChild(cl);
+
+  var total = items.length;
+  vaultScore.textContent = got + " / " + total + " gaps right";
+  setQuest("vault", got, total);
+}
+function resetVault(){ renderVault(); setQuest("vault", 0, DATA.vault.items.length); questEls.vault.score.textContent = "not tried yet"; questEls.vault.wrap.classList.remove("won"); }
+
+/* ============================================================
+   TRIAL III - SHIELD & SPEAR (negativa e interrogativa)
+   ============================================================ */
+var formsNote  = document.getElementById("formsNote");
+var formsBox   = document.getElementById("formsBox");
+var formsScore = document.getElementById("formsScore");
+
+function renderNote(){
+  formsNote.innerHTML = "";
+  var n = DATA.forms.note;
+  if(!n) return;
+  var g = el("div", "gnote");
+  var t = el("div", "gnotetitle");
+  t.appendChild(icon("scroll"));
+  t.appendChild(document.createTextNode(" " + n.title));
+  g.appendChild(t);
+  var ul = document.createElement("ul");
+  for(var i = 0; i < n.lines.length; i++){
+    var parts = n.lines[i].split(" -> ");
+    var li = document.createElement("li");
+    li.appendChild(el("span", "gform", parts[0]));
+    if(parts.length > 1) li.appendChild(document.createTextNode(" " + parts[1]));
+    ul.appendChild(li);
+  }
+  g.appendChild(ul);
+  if(n.warning) g.appendChild(el("p", "gwarn", n.warning));
+  formsNote.appendChild(g);
+}
+function renderForms(){
+  formsBox.innerHTML = "";
+  REG.forms.length = 0;
+  for(var i = 0; i < DATA.forms.items.length; i++){
+    var d = DATA.forms.items[i];
+    var id = REG.forms.push({ data: d }) - 1;
+    var item = el("div", "item");
+    item.setAttribute("data-fid", String(id));
+
+    var a = el("p", "aff");
+    a.appendChild(el("span", "rn", String(i + 1)));
+    a.appendChild(document.createTextNode(d.aff));
+    item.appendChild(a);
+
+    item.appendChild(formLine("neg", "Negative"));
+    item.appendChild(formLine("que", "Question"));
+    formsBox.appendChild(item);
+  }
+  formsScore.textContent = "";
+}
+function formLine(kind, label){
+  var row = el("div", "fline");
+  row.appendChild(el("span", "flab " + kind, label));
+  var inp = document.createElement("input");
+  inp.type = "text";
+  inp.setAttribute("autocomplete", "off");
+  inp.setAttribute("spellcheck", "false");
+  inp.setAttribute("data-kind", kind);
+  inp.setAttribute("placeholder", kind === "neg" ? "Write the negative sentence." : "Write the question.");
+  row.appendChild(inp);
+  return row;
+}
+function checkForms(){
+  clearExp(formsBox);
+  var items = formsBox.querySelectorAll(".item");
+  var got = 0, total = 0;
+  for(var i = 0; i < items.length; i++){
+    var item = items[i];
+    var d = REG.forms[parseInt(item.getAttribute("data-fid"), 10)].data;
+    var ins = item.querySelectorAll("input");
+    var negIn = ins[0], queIn = ins[1];
+    var okN = matches(negIn.value, d.neg);
+    var okQ = matches(queIn.value, d.que);
+    negIn.classList.remove("ok", "no"); negIn.classList.add(okN ? "ok" : "no");
+    queIn.classList.remove("ok", "no"); queIn.classList.add(okQ ? "ok" : "no");
+    if(okN) got++;
+    if(okQ) got++;
+    total = total + 2;
+    item.appendChild(explainBox(okN && okQ, d.neg[0] + "   /   " + d.que[0], d.why, d.tip));
+  }
+  formsScore.textContent = got + " / " + total + " forms right";
+  setQuest("forms", got, total);
+}
+function resetForms(){
+  renderForms();
+  questEls.forms.score.textContent = "not tried yet";
+  questEls.forms.wrap.classList.remove("won");
+}
+
+/* ============================================================
+   CODEX
+   ============================================================ */
+var codexBody = document.getElementById("codexBody");
+var codexToggle = document.getElementById("codexToggle");
+function renderCodex(){
+  codexBody.innerHTML = "";
+  for(var i = 0; i < DATA.codex.length; i++){
+    var g = DATA.codex[i];
+    var b = el("div", "gbox");
+    b.appendChild(el("h4", null, g.name));
+    b.appendChild(el("p", "pat", g.pattern));
+    var ps = el("div", "pairs");
+    for(var j = 0; j < g.pairs.length; j++){
+      var c = el("span", "pchip");
+      c.appendChild(document.createTextNode(g.pairs[j][0] + " → "));
+      c.appendChild(el("b", null, g.pairs[j][1]));
+      ps.appendChild(c);
+    }
+    b.appendChild(ps);
+    codexBody.appendChild(b);
+  }
+}
+codexToggle.addEventListener("click", function(){
+  var open = codexBody.classList.toggle("hidden") === false;
+  codexToggle.textContent = open ? "Close the codex" : "Open the codex";
+});
+
+/* ============================================================
+   ARRANQUE
+   ============================================================ */
+document.getElementById("vaultCheck").addEventListener("click", checkVault);
+document.getElementById("vaultReset").addEventListener("click", resetVault);
+document.getElementById("formsCheck").addEventListener("click", checkForms);
+document.getElementById("formsReset").addEventListener("click", resetForms);
+
+renderVault();
+renderNote();
+renderForms();
+renderCodex();
+srReady();
+
+})();
+</script>
+</body>
+</html>
